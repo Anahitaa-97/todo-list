@@ -1,0 +1,252 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-image: linear-gradient(120deg, #e2c35d, #d88771);
+    color: white;
+    font-family: "Poppins", sans-serif;
+    min-height: 100vh;
+}
+
+header{
+    font-size: 1.5rem ;
+}
+
+header,form{
+    min-height: 20vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+form input,form button{
+    padding: 0.5rem;
+    font-size: 2rem;
+    border: none;
+    background: white;
+    
+}
+
+form button{
+    color: #d88771;
+    background: white;
+    cursor: pointer;
+    transition: all 0.3 ease;
+}
+form button:hover {
+    background: #d88771;
+    color: white;
+}
+
+.todo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.todo-list {
+    min-width: 30%;
+    list-style: none;
+}
+
+.todo {
+    margin: 0.5rem;
+    background: white;
+    color: black;
+    font-size: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.5s ease;
+}
+
+.todo li {
+    flex: 1;
+}
+.trash-btn, .complete-btn {
+    background: #ff6f47;
+    color: white;
+    border: none;
+    padding: 1rem;
+    cursor: pointer;
+    font-size: 1rem;
+}
+.complete-btn {
+    background: rgb(73, 204, 73);
+}
+.todo-item {
+    padding: 0rem 0.5rem;
+}
+
+.fa-trash, .fa-check {
+    pointer-events: none;
+}
+
+.completed {
+    text-decoration: line-through;
+    opacity: 0.5;
+}
+.fall {
+    transform: translateY(8rem) rotateZ(20deg);
+    opacity: 0;
+}
+
+select{
+    
+    outline: none;
+    border: none;
+    margin: 2rem;
+}
+.seLect {
+    margin: 1rem;
+    position: relative;
+    overflow: hidden;
+    
+}
+select {
+    color: #ff6f47;
+    width: 10rem;
+    cursor: pointer;
+    padding: 1rem;
+}
+.seLect::after {
+    content: "\25BC";
+    position: absolute;
+    background: #ff6f47;
+    top: 0;
+    right: 0;
+    padding: 1rem;
+    pointer-events: none;
+    transition: all 0.3s ease;
+}
+
+.seLect:hover::after {
+    
+    color: #ff6f47;
+}
+
+.edit-btn {
+    background: #e2d029;
+    color: white;
+    border: none;
+    padding: 1rem;
+    cursor: pointer;
+    font-size: 1rem;
+
+}
+
+.edit-btn:hover { 
+    background: #c4b424;
+    color: white;
+
+}
+.todo {
+    margin: 0.5rem;
+    background: white;
+    color: black;
+    font-size: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.5s ease;
+    flex-wrap: wrap; /* اضافه شده */
+    word-break: break-word; /* اضافه شده */
+    min-width: 30%;
+    max-width: 100%; /* اضافه شده */
+}
+
+.todo li {
+    flex: 1;
+    min-width: 0; /* اضافه شده */
+    overflow-wrap: break-word; /* اضافه شده */
+    word-wrap: break-word; /* اضافه شده */
+    padding-right: 0.5rem; /* اضافه شده */
+}
+
+.todo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%; /* اضافه شده */
+    padding: 0 1rem; /* اضافه شده */
+}
+
+.todo-list {
+    min-width: 30%;
+    list-style: none;
+    width: 100%; /* اضافه شده */
+    max-width: 800px; /* اضافه شده */
+}
+
+/* برای موبایل */
+@media screen and (max-width: 768px) {
+    .todo {
+        font-size: 1.2rem; /* کوچکتر کردن فونت در موبایل */
+    }
+    
+    .trash-btn, .complete-btn, .edit-btn {
+        padding: 0.8rem; /* کوچکتر کردن دکمه‌ها در موبایل */
+    }
+}
+.todo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 1rem; /* اضافه شده */
+}
+
+.todo-list {
+    min-width: 30%;
+    list-style: none;
+    padding: 0 0.5rem; /* اضافه شده */
+}
+
+.todo {
+    margin: 0.5rem;
+    background: white;
+    color: black;
+    font-size: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.5s ease;
+    border-radius: 3px; /* اختیاری - برای ظاهر بهتر */
+}
+@media screen and (max-width: 768px) {
+    form {
+        padding: 0 1rem;
+    }
+    
+    form input {
+        width: 70%; /* عرض input رو کمتر میکنیم */
+        margin: 0 0.5rem; /* فاصله از اطراف */
+    }
+
+    .seLect {
+        margin: 0 1rem; /* فاصله از کناره‌ها */
+    }
+
+    select {
+        width: auto; /* عرض select رو تنظیم میکنیم */
+        min-width: 120px; /* حداقل عرض */
+    }
+}
+
+/* برای صفحات خیلی کوچک */
+@media screen and (max-width: 480px) {
+    form {
+        padding: 0 0.8rem;
+    }
+    
+    form input {
+        width: 65%;
+        margin: 0 0.3rem;
+    }
+
+    .seLect {
+        margin: 0 0.8rem;
+    }
+}
